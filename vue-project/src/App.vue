@@ -28,3 +28,11 @@
     }
   }
 </script>
+
+<style>
+  ul {
+    width: 150px;
+    list-style-type: none;
+    padding-left: 10px;
+  }
+</style> 
