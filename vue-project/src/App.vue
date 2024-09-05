@@ -1,38 +1,27 @@
 <template>
-  <h3>Todo List</h3>  
-  <ul>
-    <todo-item
-      v-for="x in items"
-      :key="x"
-      :item-name="x"
-      style="background-color: lightgreen;"
-    />
-  </ul>
-  <input v-model="newItem">
-  <button @click="addItem">Add</button>
+  <h1>Scoped Slots</h1>
+  <p>App.vue controls how local data from the scoped slot is rendered.</p>
+  <slot-comp v-slot="food">
+    <hr>
+    <h2>{{ food.foodName }}<img :src=food.foodUrl></h2>
+    <p class="greenP">{{ food.foodDesc }}</p>
+  </slot-comp>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        newItem: '',
-        items: ['Buy apples','Make pizza','Mow the lawn']
-      };
-    },
-    methods: {
-      addItem() {
-        this.items.push(this.newItem),
-        this.newItem = '';
-      }
-    }
-  }
-</script>
+<script></script>
 
 <style>
-  ul {
-    width: 150px;
-    list-style-type: none;
-    padding-left: 10px;
+  #app {
+    width: 300px;
+  }
+  h2, .greenP {
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 0;
+  }
+  img {
+    float: right;
+    height: 70px;
+    margin-left: 10px;
   }
 </style> 

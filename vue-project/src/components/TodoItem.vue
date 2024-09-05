@@ -1,14 +1,14 @@
 <template>
-    <div class="pinkBall"></div>
+    <div v-bind="$attrs" class="pinkBall"></div>
     <li v-bind="$attrs">{{ itemName }}</li>
     <div class="pinkBall"></div>
-  </template>
-  
-  <script>
-    export default {
-      props: ['itemName']
-    }
-  </script>
+</template>
+
+<script>
+export default {
+    props: ["itemName"],
+};
+</script>
 
 <style>
 .pinkBall {
@@ -22,5 +22,5 @@ li {
     margin: 0;
     border-radius: 10px;
     padding: 5px 10px;
-} 
-</style> 
+}
+</style>
